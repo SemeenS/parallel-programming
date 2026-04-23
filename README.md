@@ -393,6 +393,7 @@ Operations = 45
 
 <img width="1883" height="923" alt="image" src="https://github.com/user-attachments/assets/669cc580-5ade-45dc-b009-bdad03093103" />
 
+<img width="1222" height="725" alt="image" src="https://github.com/user-attachments/assets/392cf50b-f8af-495f-8687-31697c6b1c0c" />
 
 ---
 
