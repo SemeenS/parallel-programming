@@ -225,46 +225,10 @@ Time = 1.29e-05 sec
 Operations = 45
 ```
 
----
-
-## 8 Автоматическая верификация результатов
-
-Для проверки корректности используется Python и библиотека NumPy.
-
-```python
-import numpy as np
-
-def read_matrix(filename):
-    with open(filename) as f:
-        n = int(f.readline())
-        data = []
-        for _ in range(n):
-            data.append(list(map(float, f.readline().split())))
-        return np.array(data)
-
-A = read_matrix("A.txt")
-B = read_matrix("B.txt")
-C = read_matrix("RESULT.txt")
-
-C_expected = np.dot(A, B)
-
-if np.allclose(C, C_expected, atol=1e-10):
-    print("Verification passed!")
-    print(f"Max difference: {np.max(np.abs(C - C_expected)):.2e}")
-else:
-    print("Verification failed: Results do not match!")
-    print(f"Max difference: {np.max(np.abs(C - C_expected)):.2e}")
-```
-
-**Результат выполнения:**
-```
-Verification passed!
-Max difference: 0.00e+00
-```
 
 ---
 
-## 9 Характеристики системы
+## 8 Характеристики системы
 
 - Процессор: AMD Ryzen 5 5600H with Radeon Graphics
 
@@ -277,7 +241,7 @@ Max difference: 0.00e+00
 ---
 
 ---
-## 10 Исследование программы
+## 9 Исследование программы
 
 Для исследования зависимости времени выполнения от размера задачи были проведены эксперименты с различными размерами матриц.
 
@@ -294,14 +258,14 @@ Max difference: 0.00e+00
 
 ---
 
-## 11 График зависимости времени
+## 10 График зависимости времени
 
 <img width="1885" height="910" alt="image" src="https://github.com/user-attachments/assets/640c2db1-4dfa-423c-b7c0-795d6253492d" />
 
 
 ---
 
-## 12 Анализ результатов
+## 11 Анализ результатов
 
 Для исследования зависимости времени выполнения от размера задачи программа запускалась на матрицах разных размеров.
 
@@ -326,7 +290,7 @@ Max difference: 0.00e+00
 
 ---
 
-## 13 Вывод
+## 12 Вывод
 
 В ходе лабораторной работы была модифицирована программа последовательного умножения квадратных матриц для параллельного выполнения с использованием OpenMP. В программе реализовано управление количеством потоков, распараллелено выполнение основного вычислительного цикла и проведено исследование зависимости времени выполнения от размера задачи и параметров распараллеливания.
 
